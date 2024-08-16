@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reglas del Clan Underfire - Free Fire</title>
+    <script>
+        // Aquí va la función copiarAlPortapapeles()
+        function copiarAlPortapapeles() {
+            // Selecciona el elemento con la clase 'p'
+            var elemento = document.querySelector('.p');
+            
+            // Crea un área de texto temporal
+            var areaDeTexto = document.createElement('textarea');
+            
+            // Asigna el contenido del elemento al área de texto
+            areaDeTexto.value = elemento.textContent;
+            
+            // Añade el área de texto al documento
+            document.body.appendChild(areaDeTexto);
+            
+            // Selecciona el contenido del área de texto
+            areaDeTexto.select();
+            
+            // Copia el contenido seleccionado al portapapeles
+            document.execCommand('copy');
+            
+            // Elimina el área de texto del documento
+            document.body.removeChild(areaDeTexto);
+            
+            // Mensaje opcional de confirmación
+            alert('Iniciales copiado al portapapeles: ' + areaDeTexto.value);
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #1c1c1c;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+        }
+        header {
+            background: url(https://archive.org/download/fonlog/fonlog.gif)  no-repeat; /* Color rojo similar al logo de Free Fire */
+            background-size: cover;
+  background-position: center top;
+  position: relative;
+            padding: 20px;
+            text-align: center;
+        }
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            color: rgb(242, 28, 28, 1);
+            opacity: 0.7;
+        }
+        .logo {
+            margin: 20px auto;
+            width: 150px;
+            height: 150px;
+            background-color: #fff;
+            border-radius: 50%;
+            opacity: .5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .logo .img {
+            max-width: 100%;
+            max-height: 100%;
+            border-radius: 50%;
+        }
+        .a{
+            display: flex;
+            justify-content: left;
+        }
+        .a img{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            border: 1px solid #fff;
+        }
+        .tag{
+            display: flex;
+            justify-content: right;
+            align-items: center;
+            margin-top: -42px;
+            gap: 2px;
+        }
+        .tag .p{
+            background: #fff;
+            width: 50px;
+            height: 20px;
+            border-radius: 25px;
+         color: #1e1e1e;
+         display: flex;
+         align-items: center;
+         justify-content: center;
+         opacity: 0.7;
+        }
+        .tag button{
+             height: 20px;
+             border: none;
+             border-radius: 25px;
+             opacity: 0.7;
+             font-weight: 700;
+        }
+        main {
+            padding: 20px;
+            background: url(fondo.jpg) fixed no-repeat;
+  background-size: cover;
+  background-position: center top;
+  position: relative;
+        }
+        
+
+        .reglas {
+            background-color: rgb(112, 112, 112, 0.3);
+            max-width: 600px;
+            margin: auto;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            
+        }
+        .container{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap:10px;
+        }
+        .container button{
+            border: none;
+            background-color: rgb(232, 193, 193, 0.9);
+            padding: 5px;
+            border-radius: 8px;
+            color: rgb(0, 0, 0);
+            font-weight: 800;
+        }
+        .reglas h2 {
+            color: #f87f0e;
+            text-shadow: 0 1px #383838, -1px 0 #424242, -1px 2px #313131, -2px 1px #464646, -2px 3px #272727;
+            text-align: center;
+            font-weight: 700;
+        }
+        .reglas h4{
+            text-shadow: #474747 3px 5px 2px; }
+        .reglas ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        .reglas ul li {
+            background-color:rgb(97, 89, 89) ;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+            color: #dddddd;
+        }
+        .reglas pre{
+            background-color:rgb(97, 89, 89) ;
+            margin: 10px 0;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>ᴜɴᴅᴇƦҒIƦᴇ</h1>
+        <div class="logo">
+            <img class="img" src="https://ia601502.us.archive.org/12/items/imagen-de-whats-app-2024-08-06-a-las-12.41.34-3f-3acdc-8/Imagen%20de%20WhatsApp%202024-08-06%20a%20las%2012.41.34_3f3acdc8.jpg" alt="Logo del Clan Underfire">
+          </div><a class="a" href=""><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMwAAADACAMAAAB/Pny7AAABLFBMVEUAAAD///8A9+//AE8A9Ov/+/sAvLgAFRL/AEIA//j/8PX/c4cAAwD/AFP/AFb/AFH4AVBtCycAhoL/ADb/AEr/tr089e4A7eX/7O//AEb/eo0A////ADwAJCT/2+EA39m4CUDW/Pr/0dj/AC4APz4Asq+MBzH/sr8AzMcAd3X/ucUAHBwAko8AYmEhBA2CCC6o9fEAT06A9vHk+fgAbGoAnZv/xM3sBks8saw8Jyw8ABD/P23/BGAADgD/W3AUCA1SCiD/l6r/N1idCjjGCUQ2ChcqBxToADP/Z32zACfsU21zAAq1PFAlAAB/TFjq7u5caGi/9vRd39s/bnA8AADYCkn/ACH/iaPWtLjVAC7/pbT/RmT/W37/iJWyADGOkZSn4uFCTExcKDiMABL/rusyAAAH0klEQVR4nO2cbXfaNhSAMebNYLAJLmDCi0MhkDQESAp0yZqAQ9KsW9fR1e0KZG/9//9htmxCsCU7zs5Bco6entNP0HOfXulaupIJhSgUCoVCoVAoFAqFQqFQKBQKhUKhUCgUyrbgOztOGrijeiLxZqTg4AB3VE8kHuPCdrgd3FE9EZjM7hHuqJ7IM5TJb8C9+eHs7IzHHZp/gEyE2WR4ns78+BZ3aP4xZaKbMsULmU1f4g7NP1AZJiWzwhh3aP6By0xYls3iDs0/cJm6KrFXuEPzD1yGWUjsFHdo/kHITCR2FLzajJApJtjRNe7YfIOQYVIJcR93bL5ByRRzAZw0KBmmVB7d4A7OL0iZpBy8cYaUYVq5adDqGVomWnoXtEUAWoYp3v4UsMWmiwxTff8z7vD84SbDDH/5gDs+X7jKMPVfccfnC3cZ5uNvuAP0g4cMMzsKUEfQS4bptV8HRsdThulxsaD0a71lmF443B4cBMHnETLMLM9xhXZscNCv4A7XncfIMKcn4TDHhQu1WjvWwR2xC4+SYZi9vNlS54g+IXikjD7WIkDnecgYgy3yfGQMn96n3z9f35C6BfUno+8LSpI2VXBHjcC/TIIV0rijRvAUGVbEHTUCKhMkmWTyOcmUDp+RTOrLhHCZePxVBfAqHl939+AyiZxUJVWGrzT6O81Y27xM0o4110tfhAwrfflahJUF3DKNzk6swO1ynHV9geN2Y54yrPBNmFedlQCvTOcoFllp3F+OaXrLZG60sjgZFgmS6TRrdpPHyvDXiliWUvNhkgyZxsChEjEIv/kQ4j1lQsddTUiU1dSkVY1ilzlohx+qRPInvdlsz+CPb9p0euYlEwqNr8S0lJDVi9vSfFg0UpTEI8M3Cw9UIiez09PTVbgvcgKbznrLhC4NHVaSZZlVF4uLZaq0kDDINB7evYr0NqfxixzrKWP9O5fH+2KG1ZEkSdb/6C5bl+nU1i55m4ovGR1+PBUF9gFblumsh5hTxa8M8FFGoqg/fTDIPHA5OXW6+JfReXvdVabaSHcStirTv3eBpeWJMgY8P87uXynKFl0q9/MlD0vL/5DBwH0dgw6xYMkMXKdLsGQ6BU+X4Mi0OU+XwMgMPOZ+kGQaViXL77m4BEVmlRj48yVYMn0rMSeuLgGROeLcJky0WK0bVOflAMg0rFIGG2TRemuSWi5UVV0sz6UAyLy2KhnE5fBuIZcT+n4E7EtY8mVeDczEzBwqxZJaltkNSJex6rIzMa1FQmLZYMn0d0Fi9hwu6oOspDMZ0SDTJVqGP9qFJuaQvXcRRCV7zBu9Cv7y0l0G823TilnL7KWsvkis9u7a2B4iuTJgvRyxPWOSdzkrK1rWGSCxMo1d2Gp5uJr6Cuz4nliZg13IKEvelc28XEGjI1bGfMrsbcpURZCZDNyFXBnzlUvbKDsEM0ZAXYUnVgYUM9uUiX4FoyxzhvgOsTLg+W+fMucymDCo7xArY1TmiG1dVgRTJo1KTKgSKBmjbS8ox6jvEC1j3/sXjcRkIE9LC7ADsskUiZUBy5gx8jt9mMytjF/GKAD2539R1VOjIadMqFMLO2SqFwTItCEyyaWsP2TQr1weFJwydWNXjVsmBpGJTsr6/EdfqgQdEJvMUCVAZgCRMVYALsWMbwKZza/MQdEgYKHpkNHXZi6ZMftstu2c0YhiR9uMHEIDJqOvmoUpsgDsQJoG5jpb22bkECrQ9t9QRlezfgHSZqveJkiQ0cuZs2Gu/0ejnjPWPtvWmgLzn1W2GTkEo6FhX84Y/9MXEmIFMDC7Obb53zJGmdDdcvAO+hxMhhme/wktZ2YzxzFlwKYhM95y7A6MJiCszTx8/9n54cpgdY67OTKr5yRUZn1zoj8Coad/1b8cn329PpO2mYPdHAE/OtEpIE4zPsZ24hsfbK7vCmwmJlkCU0bBZPCASpOL7MFkmFmh3bRegot3Bu3a6njduQGSzU0DZhODHdgRAKAXDhcKtXa7XasVIusbT/bLW9E5aIBkSPg1EH3jiDpmtt6z2iRvV4+arVwNuZrbJvqSHnVmfpp3ujg+OwGJSWN/ypg0OfThbG9TJ/+34xPRL6zH1nSr9GvI1Bhj7cT4NTbw42wnsMmVKputXCJGWcioAe53APZms15vBheumwcGIgm1zKQZdpVxobgAfWlBIaGWmVTaHlcakNyZJ2xiF//j/55Gze0SEJqWZCZmStR7mP1PT3Ex9zH6soycGQPoO4uuJ/WFOcgEhaBBBvjno1+XqnWMK2hEDTLAv0OfLqJ1JE3aIAN05y4vKDqoJywX9EkOVr6n6o9VSbZy1pF0mrgJY8J/H80Rr/TZ01J6ubrAQeyvgPHdd8uW/Z0xJ9WWWr53Ifhns7Lf5Nu5u05xvkysbta4Ndjxw48Vib24Qxe2+mS5viSUJmatjOCmK0qyupzUIS+QVifLhbS+7zTaJ3iMmfDjaUaSJFVdGK/AWUrJ6uHXpaqa1xuttGhj3KE+Bj6rCcYbY7KcyL18mSuXjb8TCenh1UCBqIWyO1lNZN0QERdryEQfbCNRECAeAjsaXRE/WWzwN/tTbSSy6bWRkBbEkaag7wiQDH+T3VeUqaaNDDRtqij746AlZQP+5myc7Xa72fEZORt9CoVCoVAoFAqFQqFQKBQKhUKhUCgUCsWF/wCsue0G8EqbswAAAABJRU5ErkJggg==" alt=""></a>
+      <div class="tag"> <p class="p">ᵁᴺᴰ</p>
+            <button class="grey-qo-regular" onclick="copiarAlPortapapeles()">Copy</button></div>
+    </header>
+    <main>
+        <div class="reglas">
+            
+            <div class="container">
+                <button onclick="mostrarDiv('div1')">General</button>
+                <button onclick="mostrarDiv('div2')">Versus</button>
+            </div>
+
+            <div id="div1" class="contenido">
+                <h2>General</h2>
+                <h4>Reglas del Clan</h4>
+                <ul>
+                    <li>Se prohíbe compartir imágenes o stikers de desnudos o similares y faltar al respeto a los compañeros.
+                         Cualquiera de estas acciones resultará en la expulsión inmediata del clan.</li>
+                    <li> No prestar cuentas a extraños.</li>
+                    <li> Disponibilidad en torneos y vs.</li>
+                    <li> 5,000 puntos de honor semanal (mínimo 2,000).</li>
+                    <li> 150 puntos en Guerra de Clanes (mínimo 80).</li>
+                    <li> Ponerse las iniciales (ᵁᴺᴰ).</li>
+                    <li> Formar escuadras entre integrantes para entrenar.</li>
+                    <li> Para hacer más rápido el honor, jueguen entre integrantes del mismo clan.</li>
+                    <li> 200 puntos de honor si juegan entre mismos integrantes.</li>
+                    <li> 1,000 puntos de honor semanal por día.</li>
+                    <li> Cada quien debe buscar su rol y entrenar con sus roles como: Rusher, Granadero, Flex y soporte.</li>
+                    <li> Ayudar a los que no tienen tanta experiencia.</li>
+                    <li> Ayúda reclutando chicos mayores de 14 años, con disponibilidad, que hablen por micro y tengan WhatsApp.</li>
+                </ul>
+            </div>
+
+
+            <div id="div2" class="contenido" style="display: none;">
+                <h2>Versus</h2>
+                <button class="btn" onclick="copiarContenido()">¡Copiar!</button>
+                <div id="mensaje"></div>
+               <pre id="miTexto">*REGLAS CLAN UNDERFIRE*
+
+☢️500 𝐃𝐄  VIDA
+☢️NO PROPIEDADES DE ARMAS
+☢️NO ADISTAMIENTOS
+☢️NO AIDROP
+☢️1ERA 𝐒𝐀𝐋𝐀𝐒  UNDERFIRE
+☢️2DA * VOSOTRO 
+☢️13 𝐑𝐎𝐍𝐃𝐀𝐒
+                        
+                        
+❌NO GRANADAS DE NINGÚN TIPO
+❌NO PUÑOS
+❌NO DEJAR FUERA DE ZONA
+❌NO CHIPS
+❌NO CUENTAS BOTS (MENOS DE 30LV
+❌NO ALTURAS , SOLO POR DEFECTO 
+COMO MIL Y OBSERVATORIO 
+(SI CAJAS SI CONTENEDORES)
+✅ HABILIDAD ACTIVA ALOK 
+✅ ESCOPETA M10 M18 
+✅ SMG: UMP Y MP40
+1 ESPECTADOR POR EQUIPO 
+OBLIGATORIAS ALOK,KELLY,
+MAXIN, HAYATO O MOC 
+                        
+                        
+1 A DEGLE</pre>
+            </div>
+
+            
+        </div>
+    </main>
+    <script>
+        function mostrarDiv(divId) {
+    // Ocultar todos los divs
+    document.getElementById('div1').style.display = 'none';
+    document.getElementById('div2').style.display = 'none';
+
+    // Mostrar el div seleccionado
+    document.getElementById(divId).style.display = 'block';
+}
+    </script>
+    <script>
+        let texto = document.getElementById('miTexto').innerHTML;
+
+const copiarContenido = async () => {
+  try {
+    await navigator.clipboard.writeText(texto);
+    document.getElementById('mensaje').innerText = 'copiado';
+  } catch (err) {
+    console.error('Error al copiar: ', err);
+  }
+}
+      </script>
+</body>
+</html>
