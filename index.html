@@ -73,12 +73,15 @@
         .a{
             display: flex;
             justify-content: left;
+            margin-top: 5px;
+            
         }
         .a img{
             width: 30px;
             height: 30px;
             border-radius: 50%;
             border: 1px solid #fff;
+            background-color: transparent;
         }
         .tag{
             display: flex;
@@ -179,7 +182,8 @@ text-align: center;
         <h1>ᴜɴᴅᴇƦҒIƦᴇ</h1>
         <div class="logo">
             <img class="img" src="https://ia601502.us.archive.org/12/items/imagen-de-whats-app-2024-08-06-a-las-12.41.34-3f-3acdc-8/Imagen%20de%20WhatsApp%202024-08-06%20a%20las%2012.41.34_3f3acdc8.jpg" alt="Logo del Clan Underfire">
-          </div><a class="a" href=""><img src="data:image/png;base64,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" alt=""></a>
+          </div><a class="a" href="https://www.facebook.com/undfire"><img src="https://th.bing.com/th/id/OIP.tPsBeayaSLxzgSJG-RbbtAHaHa?w=174&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7" alt=""></a>
+          <a class="a" href="https://www.tiktok.com/@undrobles?_t=8ovKzl3iWIK&_r=1"><img src="data:image/png;base64,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" alt=""></a>
       <div class="tag"> <p class="p">ᵁᴺᴰ</p>
             <button class="grey-qo-regular" onclick="copiarAlPortapapeles()">Copy</button></div>
     </header>
@@ -192,29 +196,63 @@ text-align: center;
             </div>
 
             <div id="div1" class="contenido">
-                <h2>General</h2>
-                <h4>Reglas del Clan</h4>
+                <h2>Reglas Comunitarias del Clan</h2>
+                
                 <ul>
-                    <li>Se prohíbe compartir imágenes o stikers de desnudos o similares y faltar al respeto a los compañeros.
-                         Cualquiera de estas acciones resultará en la expulsión inmediata del clan.</li>
-                    <li> No prestar cuentas a extraños.</li>
-                    <li> Disponibilidad en torneos y vs.</li>
-                    <li> 5,000 puntos de honor semanal (mínimo 2,000).</li>
-                    <li> 150 puntos en Guerra de Clanes (mínimo 80).</li>
+                    <li><p> 1. Respeto y Comportamiento:</p>
+
+                        <p>Todos los miembros del clan deben tratarse con respeto, sin importar su rango o nivel de habilidad.</p>
+                        <p>Los insultos, comentarios despectivos, acoso, o cualquier tipo de conducta negativa no serán tolerados.</p>
+                        <p>Mantén una comunicación constructiva; cualquier conflicto personal debe resolverse de manera pacífica y privada.</p></li>
+
+                    <li><p>2. Participación Activa:</p>
+                        
+<p>Los miembros deben participar activamente en las actividades del clan, como guerras de clanes, versus y torneos.</p>
+<p>Si no puedes participar en un evento o actividad, debes notificar con antelación a un líder o sublíder.</p>
+<p>Se requiere un mínimo de actividad semanal para seguir siendo miembro del clan; los miembros inactivos por más de dos semanas sin previo aviso serán removidos.</p>
+                    </li>
+                    <li><p>3. Trabajo en Equipo:</p>
+                        <p>Fomentar el trabajo en equipo es clave. Ayuda a los demás miembros a mejorar compartiendo estrategias, tácticas y consejos útiles.</p>
+                        <p>Apoya a tus compañeros durante los juegos; el éxito del clan depende del esfuerzo colectivo.</p>
+                    </li>
+                    <li><p>4. Uso de Hacks y Trampas:</p>
+<p>Está absolutamente prohibido el uso de hacks, trampas o cualquier software que otorgue ventajas injustas. Esto incluye el uso de emuladores no permitidos por el juego.
+</p>
+<p>Cualquier miembro sorprendido utilizando hacks será expulsado inmediatamente y reportado a las autoridades del juego.</p>
+                    </li>
+                    <li><p>5. Lealtad al Clan:</p>
+                    <p>La lealtad es fundamental. No divulgues información interna del clan a personas externas.</p>
+                <p>Evita cambiar de clan frecuentemente. Si decides abandonar Underfire, hazlo de manera respetuosa, informando a los líderes con antelación.
+                    Reglas para Versus</p></li>
+                    <li><p>6. Puntos de Clan:</p>
+                        <p> 5,000 puntos de honor semanal (mínimo 2,000).</p>
+                    <p>150 puntos en Guerra de Clanes (mínimo 80).</p></li>
                     <li> Ponerse las iniciales (ᵁᴺᴰ).</li>
-                    <li> Formar escuadras entre integrantes para entrenar.</li>
-                    <li> Para hacer más rápido el honor, jueguen entre integrantes del mismo clan.</li>
-                    <li> 200 puntos de honor si juegan entre mismos integrantes.</li>
-                    <li> 1,000 puntos de honor semanal por día.</li>
-                    <li> Cada quien debe buscar su rol y entrenar con sus roles como: Rusher, Granadero, Flex y soporte.</li>
-                    <li> Ayudar a los que no tienen tanta experiencia.</li>
+                    
                     <li> Ayúda reclutando chicos mayores de 14 años, con disponibilidad, que hablen por micro y tengan WhatsApp.</li>
                 </ul>
             </div>
 
 
             <div id="div2" class="contenido" style="display: none;">
-                <h2>Versus</h2>
+                <h2>Reglas para Versus</h2>
+                <ul>
+                    <li><p>1. Organización y Programación:</p>
+                    <p>Todos los versus serán organizados y programados con antelación. La hora y fecha deben ser acordadas por ambas partes.</p>
+                    <p>Los participantes deben estar disponibles y listos para jugar al menos 10 minutos antes de la hora acordada.</p>
+                    </li>
+                    <li><p>2. Formación de Equipos:</p>
+                    <p>Los equipos se formarán según las habilidades y roles de los jugadores, asegurando un equilibrio y maximización del rendimiento.</p>
+                    <p>No se permitirán cambios de último minuto en los equipos sin la aprobación de un responsable.</p>
+                    </li>
+                    <li><p>3. Conducta Durante el Versus:</p>
+                    <p>Respeta a los adversarios en todo momento. Cualquier comportamiento antideportivo resultará en sanciones, incluyendo la posible exclusión del clan.</p>
+                    <p>No se permiten interrupciones durante el versus; asegúrate de que tu conexión y dispositivo estén en óptimas condiciones.</p>
+                </li>
+                <li><p>4. Resultados y Disputas:</p>
+                <p>Los resultados del versus serán revisados y confirmados por ambos equipos. En caso de disputa, se revisarán las evidencias (capturas de pantalla, vídeos).</p>
+            <p>Las decisiones finales serán tomadas por los líderes del clan.</p></li>
+                </ul>
                 <button class="btn" onclick="copiarContenido()">¡Copiar!</button>
                 <div id="mensaje"></div>
                <pre id="miTexto">*REGLAS CLAN UNDERFIRE*
