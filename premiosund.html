@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ganador de la Semana</title>
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    /* Fuentes y colores principales */
+    body {
+      font-family: 'Orbitron', sans-serif;
+      background: radial-gradient(circle at top, #121212, #0d0d0d);
+      color: #fff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      overflow: hidden;
+    }
+
+    /* Contenedor principal */
+    .container {
+      text-align: center;
+      max-width: 500px;
+      width: 100%;
+      background: linear-gradient(135deg, #212121, #181818);
+      border: 2px solid #ff1a1a;
+      border-radius: 15px;
+      box-shadow: 0 0 20px rgba(255, 26, 26, 0.5);
+      padding: 20px;
+    }
+
+    /* Encabezado */
+    .header {
+      background: linear-gradient(90deg, #ff1a1a, #f92eff);
+      padding: 15px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(255, 0, 0, 0.5);
+
+    }
+
+    .header h1 {
+      font-size: 1.8rem;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-shadow: 0 0 10px #f92eff, 0 0 20px #ff1a1a;
+    }
+
+    /* Tarjeta del ganador */
+    .winner-card {
+      padding: 20px;
+    }
+
+    .winner-img {
+        width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin-top: 30px;
+  border: 4px solid #f92eff;
+  box-shadow: 0 0 20px rgba(249, 46, 255, 0.7);
+  animation: pulse 3s infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    transform: scale(1.1) rotate(5deg);
+  }
+}
+
+   
+
+    h2 {
+      font-size: 1.5rem;
+      color: #ff1a1a;
+      margin-bottom: 10px;
+      text-shadow: 0 0 10px #ff1a1a, 0 0 20px #f92eff;
+      margin-top: 50px;
+    }
+
+    .score {
+      font-size: 1.2rem;
+      color: #00ff66;
+      text-shadow: 0 0 10px #00ff66, 0 0 20px #006600;
+      margin-bottom: 30px;
+    }
+
+    /* Botones */
+    button {
+      margin: 10px;
+      padding: 12px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      background: linear-gradient(90deg, #ff1a1a, #f92eff);
+      color: #fff;
+      text-transform: uppercase;
+      box-shadow: 0 5px 15px rgba(255, 26, 26, 0.5);
+      transition: all 0.3s ease;
+    }
+
+    button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 20px rgba(255, 26, 26, 0.7);
+    }
+
+    button:active {
+      transform: translateY(1px);
+    }
+
+    /* Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.8);
+      justify-content: center;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    .modal.active {
+      display: flex;
+    }
+
+    .modal-content {
+      background: #181818;
+      border: 2px solid #f92eff;
+      border-radius: 10px;
+      padding: 20px;
+      width: 90%;
+      max-width: 400px;
+      text-align: center;
+      box-shadow: 0 0 20px rgba(249, 46, 255, 0.7);
+    }
+
+    .modal-content input {
+      width: 90%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 5px;
+      background: #272727;
+      color: #fff;
+    }
+
+    .modal-content button {
+      margin: 10px 5px;
+    }
+
+    .cancel-btn {
+      background: #d9534f;
+    }
+
+    .save-btn {
+      background: #28a745;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header class="header">
+      <h1>🏆 Ganador de la Semana</h1>
+    </header>
+    <section class="winner-card">
+      <img src="https://via.placeholder.com/150" alt="Foto del jugador" class="winner-img" id="winner-img">
+      <h2 id="winner-name">Nombre del Jugador</h2>
+      <p class="score" id="winner-score">Puntos: 0</p>
+      <button id="edit-btn">✏️ Editar Ganador</button>
+    </section>
+  </div>
+
+  <!-- Modal -->
+  <div class="modal" id="modal">
+    <div class="modal-content">
+      <h2>Editar Datos del Ganador</h2>
+      <form id="form" method="get">
+        <input type="text" id="name" placeholder="Nombre del Jugador" required>
+        <input type="number" id="score" placeholder="Puntos" required>
+        <input type="file" id="img-upload" accept="image/*">
+        <button type="submit" class="save-btn">Guardar</button>
+        <button type="button" class="cancel-btn" id="cancel-btn">Cancelar</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    const nameElement = document.getElementById("winner-name");
+    const scoreElement = document.getElementById("winner-score");
+    const imgElement = document.getElementById("winner-img");
+    const editButton = document.getElementById("edit-btn");
+    const modal = document.getElementById("modal");
+    const cancelButton = document.getElementById("cancel-btn");
+    const form = document.getElementById("form");
+    const imgUploadInput = document.getElementById("img-upload");
+
+    let uploadedImg = "";
+
+    // Mostrar modal
+    editButton.addEventListener("click", () => {
+      modal.classList.add("active");
+    });
+
+    // Ocultar modal
+    cancelButton.addEventListener("click", () => {
+      modal.classList.remove("active");
+    });
+
+    // Actualizar información al guardar
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      nameElement.textContent = document.getElementById("name").value;
+      scoreElement.textContent = `Puntos: ${document.getElementById("score").value}`;
+      if (imgUploadInput.files[0]) {
+        const reader = new FileReader();
+        reader.onload = () => {
+          imgElement.src = reader.result;
+        };
+        reader.readAsDataURL(imgUploadInput.files[0]);
+      }
+      modal.classList.remove("active");
+    });
+  </script>
+</body>
+</html>
